@@ -14,6 +14,9 @@ export const HomeScreen = () => {
           <StyledStatusBar />
           <Header>
             <Text style={styles.title}>{R.string.home.title}</Text>
+            {/**
+             * REVIEW: It is better to pass navigation as a prop to the screen. The NavigationService is used where we don't have access to the navigation prop. 
+             */}
             <Button onPress={() => NavigationService.navigate(AppRoute.Search)}>
               <Image source={R.image.search} />
             </Button>
@@ -24,6 +27,7 @@ export const HomeScreen = () => {
   )
 }
 
+// REVIEW: all styles should be located in home-style.tsx
 const styles = StyleSheet.create({
   container: {
     backgroundColor: R.color.background,
