@@ -56,6 +56,7 @@ export const SearchScreen = () => {
         return
       }
 
+      // REVIEW: API calls (any async calls) should be called through redux-saga. Please check the state folder. 
       const res: IResponse<IGithubResponse> = await githubApi.request(githubUsersEndPoint, {
         pathParams: [phrase, perPage, page],
       })
